@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: slave
-        image: paderlol/nacos-mysql-slave:latest
+        image: mysql:5.7.27
         ports:
         - containerPort: 3306
         volumeMounts:
@@ -27,12 +27,12 @@ spec:
         - name: MYSQL_REPLICATION_USER
           value: 'nacos_ru'
         - name: MYSQL_REPLICATION_PASSWORD
-          value: 'nacos_ru'
+          value: '123456'
       volumes:
       - name: mysql-slave-data
         nfs:
-          server: 172.17.79.3
-          path: /data/mysql-slave
+          server: 18.5.203.58
+          path: /mysql/mysqldb-slave
 ---
 apiVersion: v1
 kind: Service
