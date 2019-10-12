@@ -25,20 +25,20 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: "root"
         - name: MYSQL_DATABASE
-          value: "nacos_devtest"
+          value: "nacos_config"
         - name: MYSQL_USER
           value: "nacos"
         - name: MYSQL_PASSWORD
-          value: "nacos"
+          value: "123456"
         - name: MYSQL_REPLICATION_USER
           value: 'nacos_ru'
         - name: MYSQL_REPLICATION_PASSWORD
-          value: 'nacos_ru'
+          value: '123456'
       volumes:
       - name: mysql-master-data
         nfs:
-          server: 172.17.79.3
-          path: /data/mysql-master
+          server: 18.5.203.58
+          path: /mysql/mysqldb
 ---
 apiVersion: v1
 kind: Service
