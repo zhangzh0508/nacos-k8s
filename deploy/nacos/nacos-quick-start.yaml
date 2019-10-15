@@ -18,11 +18,11 @@ kind: ConfigMap
 metadata:
   name: nacos-cm
 data:
-  mysql.master.db.name: "nacos_devtest"
+  mysql.master.db.name: "nacos_config"
   mysql.master.port: "3306"
   mysql.slave.port: "3306"
   mysql.master.user: "nacos"
-  mysql.master.password: "nacos"
+  mysql.master.password: "123456"
 ---
 apiVersion: apps/v1beta1
 kind: StatefulSet
@@ -49,9 +49,9 @@ spec:
                 - nacos-headless
             topologyKey: "kubernetes.io/hostname"
       containers:
-      - name: k8snacos
+      - name: nacos
         imagePullPolicy: Always
-        image: paderlol/nacos:k8s-0.3.0
+        image: nacos/nacos-server:latest
         resources:
           requests:
             memory: "2Gi"
