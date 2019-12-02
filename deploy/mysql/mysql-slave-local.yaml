@@ -23,7 +23,7 @@ spec:
           mountPath: /var/lib/mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "123456"
+          value: "root"
         - name: MYSQL_REPLICATION_USER
           value: 'nacos_ru'
         - name: MYSQL_REPLICATION_PASSWORD
