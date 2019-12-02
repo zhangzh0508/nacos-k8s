@@ -40,8 +40,12 @@ metadata:
   labels:
     name: mysql-slave
 spec:
+  type: NodePort
   ports:
   - port: 3306
-    targetPort: 3305
+    protocol: TCP
+    targetPort: 3306
+    name: mysql-slave
+    nodePort: 30305
   selector:
     name: mysql-slave
